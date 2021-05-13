@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <script src="https://unpkg.com/@jswork/next"></script>
+  <script src="../src/index.js"></script>
+  <style>
+    .img-container {
+      width: 80%;
+      margin: 20px auto;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="img-container">
+    <img id="img" src="" alt="">
+  </div>
+
+  <script>
+    fetch('./ava.jpg').then(res => res.blob()).then(res => {
+      const url = nx.blob2url(res);
+      document.getElementById('img').src = nx.blob2url(res)
+      console.log(res, url);
+    })
+  </script>
+
+</body>
+
+</html>
